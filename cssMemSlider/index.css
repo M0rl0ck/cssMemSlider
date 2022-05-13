@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(29, 2, 54);
+  color: aliceblue;
+}
+
+.container {
+  max-width: 75rem;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper > input {
+  transform: scale(0);
+}
+
+.slider {
+  width: 500%;
+  height: 80%;
+  display: flex;
+  transform: translateX(-40%);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide_1 {
+  background-image: url(./foto/1.jpg);
+}
+.slide_2 {
+  background-image: url(./foto/2.jpg);
+}
+.slide_3 {
+  background-image: url(./foto/3.jpg);
+}
+.slide_4 {
+  background-image: url(./foto/4.jpg);
+}
+.slide_5 {
+  background-image: url(./foto/5.jpg);
+}
+
+.container_controls {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.container_caption {
+  width: 80%;
+  display: flex;
+}
+
+.controls {
+  order: 1;
+  width: 20%;
+  display: flex;
+}
+
+.label {
+  width: 20%;
+}
+
+.label > label {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-style: solid;
+  border-color: aqua;
+  background-color: aqua;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.label:hover > label {
+  cursor: pointer;
+  border-color: aliceblue;
+  background-color: aliceblue;
+}
+
+#slide_1:checked
+  ~ .container_controls
+  > .controls
+  > .label:nth-of-type(1)
+  > label {
+  background-color: rgb(29, 2, 54);
+}
