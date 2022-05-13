@@ -72,11 +72,12 @@ body {
   display: flex;
 }
 
-.label {
+label {
   width: 20%;
+  cursor: pointer;
 }
 
-.label > label {
+label > .label {
   display: block;
   width: 1.2rem;
   height: 1.2rem;
@@ -87,7 +88,7 @@ body {
   margin: 0 auto;
 }
 
-.label:hover > label {
+label:hover > .label {
   cursor: pointer;
   border-color: aliceblue;
   background-color: aliceblue;
@@ -96,7 +97,31 @@ body {
 #slide_1:checked
   ~ .container_controls
   > .controls
-  > .label:nth-of-type(1)
-  > label {
+  > label:nth-of-type(1)
+  > .label,
+#slide_2:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(2)
+  > .label,
+#slide_3:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(3)
+  > .label,
+#slide_4:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(4)
+  > .label,
+#slide_5:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(5)
+  > .label {
   background-color: rgb(29, 2, 54);
+}
+
+label:active > .label {
+  background-color: crimson;
 }
