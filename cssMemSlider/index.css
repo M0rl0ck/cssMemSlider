@@ -13,6 +13,7 @@ body {
   max-width: 75rem;
   height: 100vh;
   margin: 0 auto;
+  padding: 0 0.7rem 0 0.7rem;
 }
 
 .wrapper {
@@ -28,6 +29,7 @@ body {
 .slider {
   width: 500%;
   height: 80%;
+  padding: 0 0.3rem 0 0.3rem;
   display: flex;
   gap: 0.7rem;
   transition: all 2s;
@@ -169,4 +171,27 @@ label:active > .label {
 .caption {
   width: 100%;
   font-size: 1.5rem;
+}
+
+@media (max-width: 780px) {
+  html {
+    font-size: 0.8em;
+  }
+  .slider {
+    height: 70%;
+  }
+  .controls {
+    order: 0;
+    width: 40%;
+  }
+
+  .container_controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container_caption {
+    margin-top: 2rem;
+    width: 100%;
+  }
 }
