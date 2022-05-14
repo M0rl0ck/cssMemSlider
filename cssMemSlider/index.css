@@ -170,6 +170,7 @@ label:active > .label {
 
 .caption {
   width: 100%;
+  padding-left: 0.3rem;
   font-size: 1.5rem;
 }
 
