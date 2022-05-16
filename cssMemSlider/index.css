@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(29, 2, 54);
+  color: aliceblue;
+}
+
+.container {
+  max-width: 60rem;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 0.7rem 0 0.7rem;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.wrapper > input {
+  transform: scale(0);
+}
+
+.slider {
+  width: 500%;
+  padding: 0 0.3rem 0 0.3rem;
+  display: flex;
+  gap: 0.7rem;
+  transition: all 2s;
+}
+
+.slide {
+  width: 100%;
+  padding-top: 13%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide_1 {
+  background-image: url(./foto/1.jpg);
+}
+.slide_2 {
+  background-image: url(./foto/2.jpg);
+}
+.slide_3 {
+  background-image: url(./foto/3.jpg);
+}
+.slide_4 {
+  background-image: url(./foto/4.jpg);
+}
+.slide_5 {
+  background-image: url(./foto/5.jpg);
+}
+
+.container_controls {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+}
+
+.controls {
+  order: 1;
+  width: 20%;
+  display: flex;
+}
+
+label {
+  width: 20%;
+  cursor: pointer;
+}
+
+label > .label {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-style: solid;
+  border-color: aqua;
+  background-color: aqua;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+label:hover > .label {
+  cursor: pointer;
+  border-color: aliceblue;
+  background-color: aliceblue;
+}
+
+#slide_1:checked ~ .slider {
+  transform: translateX(0);
+}
+#slide_2:checked ~ .slider {
+  transform: translateX(-20%);
+}
+#slide_3:checked ~ .slider {
+  transform: translateX(-40%);
+}
+#slide_4:checked ~ .slider {
+  transform: translateX(-60%);
+}
+#slide_5:checked ~ .slider {
+  transform: translateX(-80%);
+}
+
+#slide_1:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(1)
+  > .label,
+#slide_2:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(2)
+  > .label,
+#slide_3:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(3)
+  > .label,
+#slide_4:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(4)
+  > .label,
+#slide_5:checked
+  ~ .container_controls
+  > .controls
+  > label:nth-of-type(5)
+  > .label {
+  background-color: rgb(29, 2, 54);
+}
+
+label:active > .label {
+  background-color: crimson;
+}
+
+.container_caption {
+  width: 80%;
+  display: flex;
+  overflow: hidden;
+}
+
+.caption__wrapper {
+  min-width: 500%;
+  display: flex;
+  transition: all 2s;
+}
+
+#slide_1:checked ~ .container_controls .caption__wrapper {
+  transform: translateX(0);
+}
+#slide_2:checked ~ .container_controls .caption__wrapper {
+  transform: translateX(-20%);
+}
+#slide_3:checked ~ .container_controls .caption__wrapper {
+  transform: translateX(-40%);
+}
+#slide_4:checked ~ .container_controls .caption__wrapper {
+  transform: translateX(-60%);
+}
+#slide_5:checked ~ .container_controls .caption__wrapper {
+  transform: translateX(-80%);
+}
+
+.caption {
+  width: 100%;
+  padding-left: 0.3rem;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 780px) {
+  html {
+    font-size: 0.8em;
+  }
+
+  .controls {
+    order: 0;
+    width: 40%;
+  }
+
+  .container_controls {
+    margin-top: 5vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container_caption {
+    margin-top: 5vh;
+    width: 100%;
+  }
+}
